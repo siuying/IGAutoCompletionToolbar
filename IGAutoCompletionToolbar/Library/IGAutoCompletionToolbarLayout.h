@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IGAutoCompletionToolbarMacros.h"
 
 @protocol IGAutoCompletionToolbarLayoutDelegate <UICollectionViewDelegate>
 -(CGSize) collectionView:(UICollectionView*)collectionView sizeWithIndex:(NSInteger)index;

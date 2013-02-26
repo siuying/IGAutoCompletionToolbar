@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-
+#import "IGAutoCompletionToolbarMacros.h"
 #import "IGAutoCompletionToolbarLayout.h"
+#import "IGAutoCompletionToolbarCell.h"
 
 extern NSString* const IGAutoCompletionToolbarCellID;
 

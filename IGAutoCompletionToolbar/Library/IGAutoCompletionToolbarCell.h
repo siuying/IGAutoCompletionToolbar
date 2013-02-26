@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+#import "IGAutoCompletionToolbarMacros.h"
+
 @interface IGAutoCompletionToolbarCell : UICollectionViewCell
 
 @property (strong, nonatomic) UILabel* textLabel;
