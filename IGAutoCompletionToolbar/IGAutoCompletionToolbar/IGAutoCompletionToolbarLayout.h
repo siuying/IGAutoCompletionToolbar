@@ -18,4 +18,5 @@
 @property (nonatomic) CGFloat spacing;
 @property (nonatomic) CGSize contentSize;
 @property (strong, nonatomic) NSMutableArray* layoutAttributes;
+
 @end

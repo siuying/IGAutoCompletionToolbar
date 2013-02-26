@@ -19,7 +19,10 @@
     [super viewDidLoad];
 
     self.toolbar = [[IGAutoCompletionToolbar alloc] initWithFrame:CGRectMake(0,0,320,44)];
+    self.toolbar.items = @[@"Note", @"Test", @"Clip", @"Haha World", @"Aceeepeepe", @"Dictor", @"Mooo", @"Hahoom"];
+
     self.textfield.inputAccessoryView = self.toolbar;
+    self.toolbar.textField = self.textfield;
 //    [[NSNotificationCenter defaultCenter] addObserver:self
 //                                             selector:@selector(keyboardWillShow:)
 //                                                 name:UIKeyboardWillShowNotification

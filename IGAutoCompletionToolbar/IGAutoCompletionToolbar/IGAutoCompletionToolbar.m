@@ -18,16 +18,19 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
 
 @implementation IGAutoCompletionToolbar
 
+@synthesize textField = _textField;
+@synthesize items = _items, filteredItems = _filteredItems, filter = _filter;
+
 -(id) initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame collectionViewLayout:[[IGAutoCompletionToolbarLayout alloc] init]];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         self.items = [NSArray array];
-        self.filteredItems = [NSMutableArray array];
+        self.filter = nil;
+
         [self registerClass:[IGAutoCompletionToolbarCell class]
  forCellWithReuseIdentifier:IGAutoCompletionToolbarCellID];
 
-        self.filteredItems = @[@"Note", @"Test", @"Clip", @"Haha World", @"Aceeepeepe", @"Dictor", @"Mooo", @"Hahoom"].mutableCopy;
         self.dataSource = self;
         self.delegate = self;
 
@@ -44,6 +47,40 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
         self.showsVerticalScrollIndicator = NO;
     }
     return self;
+}
+
+-(void) setTextField:(UITextField *)textField {
+    if (_textField != textField) {
+        if (_textField != NULL) {
+            [_textField removeTarget:self action:@selector(autoCompletionToolbarTextDidChange:) forControlEvents:UIControlEventEditingChanged];
+        }
+
+        if (textField != NULL) {
+            [textField addTarget:self action:@selector(autoCompletionToolbarTextDidChange:) forControlEvents:UIControlEventEditingChanged];
+        }
+        
+        _textField = textField;
+    }
+}
+
+-(void) autoCompletionToolbarTextDidChange:(id)sender {
+    UITextField* textField = sender;
+    self.filter = textField.text;
+}
+
+-(void) setFilter:(NSString *)filter {
+    _filter = filter;
+    [self reloadData];
+}
+
+-(void) setItems:(NSArray *)items {
+    _items = items;
+    [self reloadData];
+}
+
+-(void) reloadData {
+    [self reloadFilteredItems];
+    [super reloadData];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -83,6 +120,44 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     return NO;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.toolbarDelegate respondsToSelector:@selector(autoCompletionToolbar:didSelectItemAtIndex:)]) {
+        [self.toolbarDelegate autoCompletionToolbar:self didSelectItemAtIndex:[indexPath row]];
+    }
+}
+
+#pragma mark - Private
+
+- (void) reloadFilteredItems {
+    NSMutableArray* newFilteredItems = [NSMutableArray array];
+    [self.items enumerateObjectsUsingBlock:^(id<NSObject> obj, NSUInteger idx, BOOL *stop) {
+        if (!self.filter || [self.filter isEqualToString:@""]) {
+            [newFilteredItems addObject:obj];
+            return;
+        }
+
+        if ([self.toolbarDelegate respondsToSelector:@selector(autoCompletionToolbar:filterShouldAcceptObject:)]) {
+            if ([self.toolbarDelegate autoCompletionToolbar:self filterShouldAcceptObject:obj]) {
+                [newFilteredItems addObject:obj];
+            }
+
+        } else {
+            NSString* content = nil;
+            if ([obj isMemberOfClass:[NSString class]]) {
+                content = (NSString*) obj;
+            } else {
+                content = [obj description];
+            }
+
+            if ([content rangeOfString:self.filter options:NSCaseInsensitiveSearch].location != NSNotFound) {
+                [newFilteredItems addObject:obj];
+            }
+        }
+    }];
+    
+    _filteredItems = newFilteredItems;
 }
 
 @end
