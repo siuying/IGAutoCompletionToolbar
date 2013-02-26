@@ -13,7 +13,8 @@
 -(id) init {
     self = [super init];
     if (self) {
-        self.padding = 4.0;
+        self.padding = 6.0;
+        self.spacing = 10.0;
     }
     return self;
 }
@@ -68,12 +69,12 @@
     for (NSInteger i = 0; i < numberOfItems; i ++) {
         CGSize size = [delegate collectionView:self.collectionView sizeWithIndex:i];
         UICollectionViewLayoutAttributes* attr = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-        attr.frame = CGRectMake(self.padding + offset, self.padding, size.width, height);
+        attr.frame = CGRectMake(self.spacing + offset, self.padding, size.width, height);
         [newLayoutAttributes addObject:attr];
         offset = size.width + self.padding + offset;
     }
 
-    self.contentSize = CGSizeMake(offset + self.padding, height);
+    self.contentSize = CGSizeMake(offset + self.spacing * 2 - self.padding, height);
     self.layoutAttributes = newLayoutAttributes;
 }
 

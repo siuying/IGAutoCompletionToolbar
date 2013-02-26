@@ -14,7 +14,8 @@
 
 @interface IGAutoCompletionToolbarLayout : UICollectionViewLayout
 
-@property (nonatomic) CGSize contentSize;
 @property (nonatomic) CGFloat padding;
+@property (nonatomic) CGFloat spacing;
+@property (nonatomic) CGSize contentSize;
 @property (strong, nonatomic) NSMutableArray* layoutAttributes;
 @end

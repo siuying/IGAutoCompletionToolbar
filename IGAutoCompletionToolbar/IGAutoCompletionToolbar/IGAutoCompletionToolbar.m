@@ -63,7 +63,7 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
     NSString* title = object;
     CGSize size = [title sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:14.0]
                     constrainedToSize:CGSizeMake(MAX_LABEL_WIDTH, 32.0)];
-    return CGSizeMake(size.width + 8.0, 32);
+    return CGSizeMake(size.width + 14.0, 32);
 }
 
 #pragma mark - UICollectionViewDelegate
