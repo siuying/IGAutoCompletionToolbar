@@ -104,11 +104,19 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    id object = [self.filteredItems objectAtIndex:[indexPath row]];
+    id<NSObject> object = [self.filteredItems objectAtIndex:[indexPath row]];
     IGAutoCompletionToolbarCell* cell = [self dequeueReusableCellWithReuseIdentifier:IGAutoCompletionToolbarCellID
                                                                         forIndexPath:indexPath];
-    [cell setObject:object];
-    [cell setNeedsLayout];
+    if (self.toolbarDelegate && [self.toolbarDelegate respondsToSelector:@selector(autoCompletionToolbar:setupCell:withObject:)]) {
+        [self.toolbarDelegate autoCompletionToolbar:self setupCell:cell withObject:object];
+    } else {
+        if ([object isKindOfClass:[NSString class]]) {
+            cell.textLabel.text = (NSString*) object;
+        } else {
+            cell.textLabel.text = [object description];
+        }
+        [cell setNeedsLayout];
+    }
     return cell;
 }
 
@@ -133,9 +141,9 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"selected -> %@", indexPath);
-    if ([self.toolbarDelegate respondsToSelector:@selector(autoCompletionToolbar:didSelectItemAtIndex:)]) {
-        [self.toolbarDelegate autoCompletionToolbar:self didSelectItemAtIndex:[indexPath row]];
+    if (self.toolbarDelegate && [self.toolbarDelegate respondsToSelector:@selector(autoCompletionToolbar:didSelectItemWithObject:)]) {
+        id object = [self.filteredItems objectAtIndex:[indexPath row]];
+        [self.toolbarDelegate autoCompletionToolbar:self didSelectItemWithObject:object];
     }
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
@@ -151,8 +159,8 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
             return;
         }
 
-        if ([self.toolbarDelegate respondsToSelector:@selector(autoCompletionToolbar:filterShouldAcceptObject:)]) {
-            if ([self.toolbarDelegate autoCompletionToolbar:self filterShouldAcceptObject:obj]) {
+        if (self.toolbarDelegate && [self.toolbarDelegate respondsToSelector:@selector(autoCompletionToolbar:shouldAcceptObject:withFilter:)]) {
+            if ([self.toolbarDelegate autoCompletionToolbar:self shouldAcceptObject:obj withFilter:self.filter]) {
                 [newFilteredItems addObject:obj];
             }
 

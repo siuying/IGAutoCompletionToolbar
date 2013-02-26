@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "IGAutoCompletionToolbar.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <IGAutoCompletionToolbarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *textfield;
 @property (strong, nonatomic) IBOutlet IGAutoCompletionToolbar *toolbar;

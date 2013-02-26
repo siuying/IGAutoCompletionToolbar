@@ -44,13 +44,6 @@
     self.textLabel.text = nil;
 }
 
--(void) setObject:(id)object
-{
-    NSString* title = (NSString*) object;
-    self.textLabel.text = title;
-    [self setNeedsLayout];
-}
-
 -(void) layoutSubviews {
     [super layoutSubviews];
     [self setupSublayers];
