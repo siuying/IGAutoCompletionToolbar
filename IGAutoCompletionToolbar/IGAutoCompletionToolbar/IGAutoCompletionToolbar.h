@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+
 #import "IGAutoCompletionToolbarLayout.h"
 
 extern NSString* const IGAutoCompletionToolbarCellID;
@@ -24,7 +26,7 @@ extern NSString* const IGAutoCompletionToolbarCellID;
 
 // the textfield this auto completion toolbar related to
 @property (nonatomic, weak) UITextField* textField;
-
+@property (nonatomic, strong) CAGradientLayer* gradientLayer;
 @property (nonatomic, strong) NSString* filter;
 @property (nonatomic, strong) NSArray* items;
 @property (nonatomic, strong, readonly) NSMutableArray* filteredItems;

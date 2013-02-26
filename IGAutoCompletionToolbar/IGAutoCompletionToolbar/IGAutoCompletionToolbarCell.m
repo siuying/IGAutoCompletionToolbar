@@ -23,8 +23,6 @@
         self.textLabel.textAlignment = NSTextAlignmentCenter;
         self.textLabel.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:self.textLabel];
-
-        //turning off bounds clipping allows the shadow to extend beyond the rect of the view
         [self setClipsToBounds:NO];
         
         //set the shadow on the view's layer
@@ -35,12 +33,14 @@
         
         self.backgroundView = [[UIView alloc] initWithFrame:self.bounds];
         self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
-        self.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
+        [self setupSublayers];
+
     }
     return self;
 }
 
 -(void) prepareForReuse {
+    [super prepareForReuse];
     self.textLabel.text = nil;
 }
 
@@ -48,8 +48,12 @@
 {
     NSString* title = (NSString*) object;
     self.textLabel.text = title;
-    [self setupSublayers];
     [self setNeedsLayout];
+}
+
+-(void) layoutSubviews {
+    [super layoutSubviews];
+    [self setupSublayers];
 }
 
 #pragma mark - Sublayers
@@ -61,19 +65,33 @@
     
     CAGradientLayer * gradient = [CAGradientLayer layer];
     [gradient setFrame:[self bounds]];
-    [gradient setColors:[NSArray arrayWithObjects:(id)[highColor CGColor], (id)[lowColor CGColor], nil]];
+    [gradient setColors:@[(id)[highColor CGColor], (id)[lowColor CGColor]]];
     
     CALayer * roundRect = [CALayer layer];
     [roundRect setFrame:[self bounds]];
     [roundRect setCornerRadius:6.0f];
     [roundRect setMasksToBounds:YES];
     [roundRect addSublayer:gradient];
-    
-    [[self.backgroundView layer] insertSublayer:roundRect atIndex:0];
-    if (self.bgLayer) {
-        [self.backgroundView.layer replaceSublayer:self.bgLayer with:roundRect];
+    if (self.gradientLayer) {
+        [self.gradientLayer removeFromSuperlayer];
     }
-    self.bgLayer = roundRect;
+    [self.backgroundView.layer insertSublayer:roundRect atIndex:0];
+    self.gradientLayer = roundRect;
+
+    CAGradientLayer * gradient2 = [CAGradientLayer layer];
+    [gradient2 setFrame:[self bounds]];
+    [gradient2 setColors:@[(id)[lowColor CGColor], (id)[highColor CGColor]]];
+    
+    CALayer * roundRect2 = [CALayer layer];
+    [roundRect2 setFrame:[self bounds]];
+    [roundRect2 setCornerRadius:6.0f];
+    [roundRect2 setMasksToBounds:YES];
+    if (self.selectedGradientLayer) {
+        [self.selectedGradientLayer removeFromSuperlayer];
+    }
+    [roundRect2 addSublayer:gradient2];
+    [self.selectedBackgroundView.layer insertSublayer:roundRect2 atIndex:0];
+    self.selectedGradientLayer = roundRect2;
 }
 
 @end

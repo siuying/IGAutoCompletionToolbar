@@ -27,6 +27,8 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
         self.backgroundColor = [UIColor whiteColor];
         self.items = [NSArray array];
         self.filter = nil;
+        self.allowsSelection = YES;
+        self.allowsMultipleSelection = NO;
 
         [self registerClass:[IGAutoCompletionToolbarCell class]
  forCellWithReuseIdentifier:IGAutoCompletionToolbarCellID];
@@ -34,14 +36,13 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
         self.dataSource = self;
         self.delegate = self;
 
-        CAGradientLayer* gradient = [CAGradientLayer layer];
+        self.gradientLayer = [CAGradientLayer layer];
         UIColor * highColor = [UIColor colorWithRed:0.627 green:0.627 blue:0.627 alpha:1];
         UIColor * lowColor = [UIColor colorWithRed:0.322 green:0.361 blue:0.412 alpha:1];
-        gradient.frame = self.bounds;
-        gradient.colors = @[(id)[highColor CGColor],
-                            (id)[lowColor CGColor]];
+        self.gradientLayer.frame = self.bounds;
+        self.gradientLayer.colors = @[(id)[highColor CGColor], (id)[lowColor CGColor]];
         self.backgroundView = [[UIView alloc] initWithFrame:self.bounds];
-        [self.backgroundView.layer addSublayer:gradient];
+        [self.backgroundView.layer addSublayer:self.gradientLayer];
         
         self.showsHorizontalScrollIndicator = NO;
         self.showsVerticalScrollIndicator = NO;
@@ -83,6 +84,11 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
     [super reloadData];
 }
 
+-(void) layoutSubviews {
+    [super layoutSubviews];
+    self.gradientLayer.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -119,14 +125,21 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
 #pragma mark - UICollectionViewDelegate
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    return NO;
+    return YES;
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"selected -> %@", indexPath);
     if ([self.toolbarDelegate respondsToSelector:@selector(autoCompletionToolbar:didSelectItemAtIndex:)]) {
         [self.toolbarDelegate autoCompletionToolbar:self didSelectItemAtIndex:[indexPath row]];
     }
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
+
 
 #pragma mark - Private
 

@@ -12,7 +12,8 @@
 @interface IGAutoCompletionToolbarCell : UICollectionViewCell
 
 @property (strong, nonatomic) UILabel* textLabel;
-@property (strong, nonatomic) CALayer* bgLayer;
+@property (strong, nonatomic) CALayer* gradientLayer;
+@property (strong, nonatomic) CALayer* selectedGradientLayer;
 
 -(void) setObject:(id)object;
 
