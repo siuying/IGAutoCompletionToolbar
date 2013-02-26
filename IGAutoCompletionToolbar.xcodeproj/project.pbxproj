@@ -22,6 +22,7 @@
 		547BF6C716DC6BC700D5A487 /* IGAutoCompletionToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6C616DC6BC700D5A487 /* IGAutoCompletionToolbar.m */; };
 		547BF6CA16DC86DA00D5A487 /* IGAutoCompletionToolbarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6C916DC86DA00D5A487 /* IGAutoCompletionToolbarCell.m */; };
 		547BF6CD16DC9AC900D5A487 /* IGAutoCompletionToolbarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6CC16DC9AC900D5A487 /* IGAutoCompletionToolbarLayout.m */; };
+		547BF6CF16DCB50F00D5A487 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547BF6CE16DCB50F00D5A487 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		547BF6C916DC86DA00D5A487 /* IGAutoCompletionToolbarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IGAutoCompletionToolbarCell.m; path = IGAutoCompletionToolbar/IGAutoCompletionToolbarCell.m; sourceTree = "<group>"; };
 		547BF6CB16DC9AC900D5A487 /* IGAutoCompletionToolbarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGAutoCompletionToolbarLayout.h; path = IGAutoCompletionToolbar/IGAutoCompletionToolbarLayout.h; sourceTree = "<group>"; };
 		547BF6CC16DC9AC900D5A487 /* IGAutoCompletionToolbarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IGAutoCompletionToolbarLayout.m; path = IGAutoCompletionToolbar/IGAutoCompletionToolbarLayout.m; sourceTree = "<group>"; };
+		547BF6CE16DCB50F00D5A487 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				547BF6CF16DCB50F00D5A487 /* QuartzCore.framework in Frameworks */,
 				547BF69F16DC6B8700D5A487 /* UIKit.framework in Frameworks */,
 				547BF6A116DC6B8700D5A487 /* Foundation.framework in Frameworks */,
 				547BF6A316DC6B8700D5A487 /* CoreGraphics.framework in Frameworks */,
@@ -84,6 +87,7 @@
 		547BF69D16DC6B8700D5A487 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				547BF6CE16DCB50F00D5A487 /* QuartzCore.framework */,
 				547BF69E16DC6B8700D5A487 /* UIKit.framework */,
 				547BF6A016DC6B8700D5A487 /* Foundation.framework */,
 				547BF6A216DC6B8700D5A487 /* CoreGraphics.framework */,

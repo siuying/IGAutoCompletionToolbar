@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface IGAutoCompletionToolbarCell : UICollectionViewCell
 
 @property (strong, nonatomic) UILabel* textLabel;
+@property (strong, nonatomic) CALayer* bgLayer;
 
 -(void) setObject:(id)object;
 
