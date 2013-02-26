@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.platform = :ios, '5.0'
   s.frameworks = 'QuartzCore'
-  s.source_files = 'IGAutoCompletionToolbar/**/*.{m,h}'
+  s.source_files = 'IGAutoCompletionToolbar/Library/**/*.{m,h}'
 end

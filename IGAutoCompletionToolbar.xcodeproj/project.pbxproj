@@ -19,10 +19,10 @@
 		547BF6B816DC6B8700D5A487 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6B716DC6B8700D5A487 /* ViewController.m */; };
 		547BF6BB16DC6B8700D5A487 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547BF6B916DC6B8700D5A487 /* ViewController_iPhone.xib */; };
 		547BF6BE16DC6B8700D5A487 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547BF6BC16DC6B8700D5A487 /* ViewController_iPad.xib */; };
-		547BF6C716DC6BC700D5A487 /* IGAutoCompletionToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6C616DC6BC700D5A487 /* IGAutoCompletionToolbar.m */; };
-		547BF6CA16DC86DA00D5A487 /* IGAutoCompletionToolbarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6C916DC86DA00D5A487 /* IGAutoCompletionToolbarCell.m */; };
-		547BF6CD16DC9AC900D5A487 /* IGAutoCompletionToolbarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6CC16DC9AC900D5A487 /* IGAutoCompletionToolbarLayout.m */; };
 		547BF6CF16DCB50F00D5A487 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547BF6CE16DCB50F00D5A487 /* QuartzCore.framework */; };
+		547BF6D716DCFE3200D5A487 /* IGAutoCompletionToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6D216DCFE3200D5A487 /* IGAutoCompletionToolbar.m */; };
+		547BF6D816DCFE3200D5A487 /* IGAutoCompletionToolbarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6D416DCFE3200D5A487 /* IGAutoCompletionToolbarCell.m */; };
+		547BF6D916DCFE3200D5A487 /* IGAutoCompletionToolbarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6D616DCFE3200D5A487 /* IGAutoCompletionToolbarLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,13 +43,13 @@
 		547BF6B716DC6B8700D5A487 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		547BF6BA16DC6B8700D5A487 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		547BF6BD16DC6B8700D5A487 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
-		547BF6C516DC6BC700D5A487 /* IGAutoCompletionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGAutoCompletionToolbar.h; path = IGAutoCompletionToolbar/IGAutoCompletionToolbar.h; sourceTree = "<group>"; };
-		547BF6C616DC6BC700D5A487 /* IGAutoCompletionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IGAutoCompletionToolbar.m; path = IGAutoCompletionToolbar/IGAutoCompletionToolbar.m; sourceTree = "<group>"; };
-		547BF6C816DC86DA00D5A487 /* IGAutoCompletionToolbarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGAutoCompletionToolbarCell.h; path = IGAutoCompletionToolbar/IGAutoCompletionToolbarCell.h; sourceTree = "<group>"; };
-		547BF6C916DC86DA00D5A487 /* IGAutoCompletionToolbarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IGAutoCompletionToolbarCell.m; path = IGAutoCompletionToolbar/IGAutoCompletionToolbarCell.m; sourceTree = "<group>"; };
-		547BF6CB16DC9AC900D5A487 /* IGAutoCompletionToolbarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGAutoCompletionToolbarLayout.h; path = IGAutoCompletionToolbar/IGAutoCompletionToolbarLayout.h; sourceTree = "<group>"; };
-		547BF6CC16DC9AC900D5A487 /* IGAutoCompletionToolbarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IGAutoCompletionToolbarLayout.m; path = IGAutoCompletionToolbar/IGAutoCompletionToolbarLayout.m; sourceTree = "<group>"; };
 		547BF6CE16DCB50F00D5A487 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		547BF6D116DCFE3200D5A487 /* IGAutoCompletionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGAutoCompletionToolbar.h; sourceTree = "<group>"; };
+		547BF6D216DCFE3200D5A487 /* IGAutoCompletionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGAutoCompletionToolbar.m; sourceTree = "<group>"; };
+		547BF6D316DCFE3200D5A487 /* IGAutoCompletionToolbarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGAutoCompletionToolbarCell.h; sourceTree = "<group>"; };
+		547BF6D416DCFE3200D5A487 /* IGAutoCompletionToolbarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGAutoCompletionToolbarCell.m; sourceTree = "<group>"; };
+		547BF6D516DCFE3200D5A487 /* IGAutoCompletionToolbarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGAutoCompletionToolbarLayout.h; sourceTree = "<group>"; };
+		547BF6D616DCFE3200D5A487 /* IGAutoCompletionToolbarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGAutoCompletionToolbarLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 		547BF6A416DC6B8700D5A487 /* IGAutoCompletionToolbar */ = {
 			isa = PBXGroup;
 			children = (
-				547BF6C416DC6BA900D5A487 /* IGAutoCompletionToolbar */,
+				547BF6D016DCFE3200D5A487 /* Library */,
 				547BF6AD16DC6B8700D5A487 /* AppDelegate.h */,
 				547BF6AE16DC6B8700D5A487 /* AppDelegate.m */,
 				547BF6B616DC6B8700D5A487 /* ViewController.h */,
@@ -124,17 +124,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		547BF6C416DC6BA900D5A487 /* IGAutoCompletionToolbar */ = {
+		547BF6D016DCFE3200D5A487 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				547BF6C516DC6BC700D5A487 /* IGAutoCompletionToolbar.h */,
-				547BF6C616DC6BC700D5A487 /* IGAutoCompletionToolbar.m */,
-				547BF6C816DC86DA00D5A487 /* IGAutoCompletionToolbarCell.h */,
-				547BF6C916DC86DA00D5A487 /* IGAutoCompletionToolbarCell.m */,
-				547BF6CB16DC9AC900D5A487 /* IGAutoCompletionToolbarLayout.h */,
-				547BF6CC16DC9AC900D5A487 /* IGAutoCompletionToolbarLayout.m */,
+				547BF6D116DCFE3200D5A487 /* IGAutoCompletionToolbar.h */,
+				547BF6D216DCFE3200D5A487 /* IGAutoCompletionToolbar.m */,
+				547BF6D316DCFE3200D5A487 /* IGAutoCompletionToolbarCell.h */,
+				547BF6D416DCFE3200D5A487 /* IGAutoCompletionToolbarCell.m */,
+				547BF6D516DCFE3200D5A487 /* IGAutoCompletionToolbarLayout.h */,
+				547BF6D616DCFE3200D5A487 /* IGAutoCompletionToolbarLayout.m */,
 			);
-			name = IGAutoCompletionToolbar;
+			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,9 +207,9 @@
 				547BF6AB16DC6B8700D5A487 /* main.m in Sources */,
 				547BF6AF16DC6B8700D5A487 /* AppDelegate.m in Sources */,
 				547BF6B816DC6B8700D5A487 /* ViewController.m in Sources */,
-				547BF6C716DC6BC700D5A487 /* IGAutoCompletionToolbar.m in Sources */,
-				547BF6CA16DC86DA00D5A487 /* IGAutoCompletionToolbarCell.m in Sources */,
-				547BF6CD16DC9AC900D5A487 /* IGAutoCompletionToolbarLayout.m in Sources */,
+				547BF6D716DCFE3200D5A487 /* IGAutoCompletionToolbar.m in Sources */,
+				547BF6D816DCFE3200D5A487 /* IGAutoCompletionToolbarCell.m in Sources */,
+				547BF6D916DCFE3200D5A487 /* IGAutoCompletionToolbarLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
