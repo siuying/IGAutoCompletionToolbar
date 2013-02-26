@@ -17,13 +17,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.toolbar = [[IGAutoCompletionToolbar alloc] initWithFrame:CGRectMake(0,0,320,44)];
+    self.textfield.inputAccessoryView = self.toolbar;
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardWillShow:)
+//                                                 name:UIKeyboardWillShowNotification
+//                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardWillHide:)
+//                                                 name:UIKeyboardWillHideNotification
+//                                               object:nil];
 }
-
 @end
