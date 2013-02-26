@@ -6,14 +6,14 @@ IGAutoCompletionToolbar is a UICollectionView subclass created to display auto c
 
 ### Requirements
 
-iOS 5 or above with ARC.
+iOS 6 or above with ARC.
 
 ### Installation
 
 If you are using CocoaPods, add 'IGAutoCompletionToolbar' to your Podfile:
 
 ```
-pod 'IGAutoCompletionToolbar', '0.1.0'
+pod 'IGAutoCompletionToolbar', '0.1.3'
 ```
 
 Otherwise, download the projects and add files under IGAutoCompletionToolbar/* and 'QuartzCore' framework to your project.
