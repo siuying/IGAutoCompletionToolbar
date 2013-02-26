@@ -31,7 +31,7 @@ extern NSString* const IGAutoCompletionToolbarCellID;
 - (void) autoCompletionToolbar:(IGAutoCompletionToolbar*)toolbar didSelectItemWithObject:(id)object;
 @end
 
-@interface IGAutoCompletionToolbar : UICollectionView <UICollectionViewDataSource, UICollectionViewDelegate, IGAutoCompletionToolbarLayoutDelegate>
+@interface IGAutoCompletionToolbar : IGCollectionView <IGCollectionViewDataSource, IGCollectionViewDelegate, IGAutoCompletionToolbarLayoutDelegate>
 
 @property (nonatomic, weak) id<IGAutoCompletionToolbarDelegate, NSObject> toolbarDelegate;
 

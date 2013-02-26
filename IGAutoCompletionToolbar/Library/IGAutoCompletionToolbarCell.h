@@ -11,7 +11,7 @@
 
 #import "IGAutoCompletionToolbarMacros.h"
 
-@interface IGAutoCompletionToolbarCell : UICollectionViewCell
+@interface IGAutoCompletionToolbarCell : IGCollectionViewCell
 
 @property (strong, nonatomic) UILabel* textLabel;
 @property (strong, nonatomic) CALayer* gradientLayer;

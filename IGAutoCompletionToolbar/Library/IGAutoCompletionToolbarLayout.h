@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "IGAutoCompletionToolbarMacros.h"
 
-@protocol IGAutoCompletionToolbarLayoutDelegate <UICollectionViewDelegate>
--(CGSize) collectionView:(UICollectionView*)collectionView sizeWithIndex:(NSInteger)index;
+@protocol IGAutoCompletionToolbarLayoutDelegate <IGCollectionViewDelegate>
+-(CGSize) collectionView:(IGCollectionView*)collectionView sizeWithIndex:(NSInteger)index;
 @end
 
-@interface IGAutoCompletionToolbarLayout : UICollectionViewLayout
+@interface IGAutoCompletionToolbarLayout : IGCollectionViewLayout
 
 @property (nonatomic) CGFloat padding;
 @property (nonatomic) CGFloat spacing;

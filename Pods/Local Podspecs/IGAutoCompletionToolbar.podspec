@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/siuying/IGAutoCompletionToolbar'
   s.author   = { 'Francis Chong' => 'francis@ignition.hk' }
   s.license  = 'MIT'
-  s.source   = { :git => 'https://github.com/siuying/IGAutoCompletionToolbar.git', :commit => '769560f' }
+  s.source   = { :git => 'https://github.com/siuying/IGAutoCompletionToolbar.git', :commit => '3a6b68b' }
   s.requires_arc = true
   s.platform = :ios, '5.0'
 
@@ -19,15 +19,8 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'ios5' do |ss|
-    ss.source_files  = 'IGAutoCompletionToolbar/Library/ios5/*.{m,h}'
     ss.dependency 'PSTCollectionView'
     ss.dependency 'IGAutoCompletionToolbar/Core'
-
-    def ss.post_install(target)
-      prefix_header = config.project_pods_root + target.prefix_header_filename
-      prefix_header.open('a') do |file|
-        file.puts(%{#ifdef __OBJC__\n#import "IGAutoCompletionToolbar+iOS5.h"\n#endif})
-      end
-    end
+    s.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) IG_TOOLBAR_IOS5' }
   end
 end

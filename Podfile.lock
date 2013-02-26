@@ -14,8 +14,8 @@ EXTERNAL SOURCES:
     :podspec: IGAutoCompletionToolbar.podspec
 
 SPEC CHECKSUMS:
-  IGAutoCompletionToolbar/Core: ff673df2a797f483293462d3c842ced4a6b021ed
-  IGAutoCompletionToolbar/ios5: ff673df2a797f483293462d3c842ced4a6b021ed
+  IGAutoCompletionToolbar/Core: 748f8dfdbece58ea533dea814b953e91426898c4
+  IGAutoCompletionToolbar/ios5: 748f8dfdbece58ea533dea814b953e91426898c4
   PSTCollectionView: c2ce6d64ffe55a8c3e68bb1036442817aaf83409
 
 COCOAPODS: 0.16.1

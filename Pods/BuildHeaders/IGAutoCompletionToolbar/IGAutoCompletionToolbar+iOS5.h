@@ -1,1 +1,0 @@
-../../IGAutoCompletionToolbar/IGAutoCompletionToolbar/Library/ios5/IGAutoCompletionToolbar+iOS5.h

@@ -103,7 +103,7 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
     }
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (IGCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     id<NSObject> object = [self.filteredItems objectAtIndex:[indexPath row]];
     IGAutoCompletionToolbarCell* cell = [self dequeueReusableCellWithReuseIdentifier:IGAutoCompletionToolbarCellID
                                                                         forIndexPath:indexPath];
