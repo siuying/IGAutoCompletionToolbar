@@ -13,10 +13,19 @@ iOS 5 or above with ARC.
 If you are using CocoaPods, add 'IGAutoCompletionToolbar' to your Podfile:
 
 ```
-pod 'IGAutoCompletionToolbar', '0.1.0'
+pod 'IGAutoCompletionToolbar', '0.1.2'
 ```
 
 Otherwise, download the projects and add files under IGAutoCompletionToolbar/* and 'QuartzCore' framework to your project.
+
+### Installation for iOS 5
+
+IGAutoCompletionToolbar depends on UICollectionView which is introduced in iOS 6. If you are building for 
+iOS 5.x, you can include the iOS 5 compatible version, which is based on [PSTCollectionView](https://github.com/steipete/PSTCollectionView).
+
+```
+pod 'IGAutoCompletionToolbar/ios', '0.1.2'
+```
 
 ### Usage
 
