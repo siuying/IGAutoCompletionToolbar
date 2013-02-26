@@ -15,6 +15,4 @@
 @property (strong, nonatomic) CALayer* gradientLayer;
 @property (strong, nonatomic) CALayer* selectedGradientLayer;
 
--(void) setObject:(id)object;
-
 @end
