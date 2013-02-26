@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E90303D9A0C433C8CC5450B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C568E6855F9149279E299530 /* libPods.a */; };
 		547BF69F16DC6B8700D5A487 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547BF69E16DC6B8700D5A487 /* UIKit.framework */; };
 		547BF6A116DC6B8700D5A487 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547BF6A016DC6B8700D5A487 /* Foundation.framework */; };
 		547BF6A316DC6B8700D5A487 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547BF6A216DC6B8700D5A487 /* CoreGraphics.framework */; };
@@ -20,12 +21,10 @@
 		547BF6BB16DC6B8700D5A487 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547BF6B916DC6B8700D5A487 /* ViewController_iPhone.xib */; };
 		547BF6BE16DC6B8700D5A487 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547BF6BC16DC6B8700D5A487 /* ViewController_iPad.xib */; };
 		547BF6CF16DCB50F00D5A487 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547BF6CE16DCB50F00D5A487 /* QuartzCore.framework */; };
-		547BF6D716DCFE3200D5A487 /* IGAutoCompletionToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6D216DCFE3200D5A487 /* IGAutoCompletionToolbar.m */; };
-		547BF6D816DCFE3200D5A487 /* IGAutoCompletionToolbarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6D416DCFE3200D5A487 /* IGAutoCompletionToolbarCell.m */; };
-		547BF6D916DCFE3200D5A487 /* IGAutoCompletionToolbarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6D616DCFE3200D5A487 /* IGAutoCompletionToolbarLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		410EB2CD3EDF4914A8D567FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		547BF69B16DC6B8700D5A487 /* IGAutoCompletionToolbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGAutoCompletionToolbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547BF69E16DC6B8700D5A487 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		547BF6A016DC6B8700D5A487 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -44,12 +43,7 @@
 		547BF6BA16DC6B8700D5A487 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		547BF6BD16DC6B8700D5A487 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		547BF6CE16DCB50F00D5A487 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		547BF6D116DCFE3200D5A487 /* IGAutoCompletionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGAutoCompletionToolbar.h; sourceTree = "<group>"; };
-		547BF6D216DCFE3200D5A487 /* IGAutoCompletionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGAutoCompletionToolbar.m; sourceTree = "<group>"; };
-		547BF6D316DCFE3200D5A487 /* IGAutoCompletionToolbarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGAutoCompletionToolbarCell.h; sourceTree = "<group>"; };
-		547BF6D416DCFE3200D5A487 /* IGAutoCompletionToolbarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGAutoCompletionToolbarCell.m; sourceTree = "<group>"; };
-		547BF6D516DCFE3200D5A487 /* IGAutoCompletionToolbarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGAutoCompletionToolbarLayout.h; sourceTree = "<group>"; };
-		547BF6D616DCFE3200D5A487 /* IGAutoCompletionToolbarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGAutoCompletionToolbarLayout.m; sourceTree = "<group>"; };
+		C568E6855F9149279E299530 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +55,7 @@
 				547BF69F16DC6B8700D5A487 /* UIKit.framework in Frameworks */,
 				547BF6A116DC6B8700D5A487 /* Foundation.framework in Frameworks */,
 				547BF6A316DC6B8700D5A487 /* CoreGraphics.framework in Frameworks */,
+				1E90303D9A0C433C8CC5450B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +68,7 @@
 				547BF6A416DC6B8700D5A487 /* IGAutoCompletionToolbar */,
 				547BF69D16DC6B8700D5A487 /* Frameworks */,
 				547BF69C16DC6B8700D5A487 /* Products */,
+				410EB2CD3EDF4914A8D567FA /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +87,7 @@
 				547BF69E16DC6B8700D5A487 /* UIKit.framework */,
 				547BF6A016DC6B8700D5A487 /* Foundation.framework */,
 				547BF6A216DC6B8700D5A487 /* CoreGraphics.framework */,
+				C568E6855F9149279E299530 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -98,7 +95,6 @@
 		547BF6A416DC6B8700D5A487 /* IGAutoCompletionToolbar */ = {
 			isa = PBXGroup;
 			children = (
-				547BF6D016DCFE3200D5A487 /* Library */,
 				547BF6AD16DC6B8700D5A487 /* AppDelegate.h */,
 				547BF6AE16DC6B8700D5A487 /* AppDelegate.m */,
 				547BF6B616DC6B8700D5A487 /* ViewController.h */,
@@ -124,19 +120,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		547BF6D016DCFE3200D5A487 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				547BF6D116DCFE3200D5A487 /* IGAutoCompletionToolbar.h */,
-				547BF6D216DCFE3200D5A487 /* IGAutoCompletionToolbar.m */,
-				547BF6D316DCFE3200D5A487 /* IGAutoCompletionToolbarCell.h */,
-				547BF6D416DCFE3200D5A487 /* IGAutoCompletionToolbarCell.m */,
-				547BF6D516DCFE3200D5A487 /* IGAutoCompletionToolbarLayout.h */,
-				547BF6D616DCFE3200D5A487 /* IGAutoCompletionToolbarLayout.m */,
-			);
-			path = Library;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +130,7 @@
 				547BF69716DC6B8700D5A487 /* Sources */,
 				547BF69816DC6B8700D5A487 /* Frameworks */,
 				547BF69916DC6B8700D5A487 /* Resources */,
+				EB50E926E89642AA968E3E57 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,6 +183,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EB50E926E89642AA968E3E57 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		547BF69716DC6B8700D5A487 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -207,9 +208,6 @@
 				547BF6AB16DC6B8700D5A487 /* main.m in Sources */,
 				547BF6AF16DC6B8700D5A487 /* AppDelegate.m in Sources */,
 				547BF6B816DC6B8700D5A487 /* ViewController.m in Sources */,
-				547BF6D716DCFE3200D5A487 /* IGAutoCompletionToolbar.m in Sources */,
-				547BF6D816DCFE3200D5A487 /* IGAutoCompletionToolbarCell.m in Sources */,
-				547BF6D916DCFE3200D5A487 /* IGAutoCompletionToolbarLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,10 +301,12 @@
 		};
 		547BF6C216DC6B8700D5A487 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 410EB2CD3EDF4914A8D567FA /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IGAutoCompletionToolbar/IGAutoCompletionToolbar-Prefix.pch";
 				INFOPLIST_FILE = "IGAutoCompletionToolbar/IGAutoCompletionToolbar-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -314,10 +314,12 @@
 		};
 		547BF6C316DC6B8700D5A487 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 410EB2CD3EDF4914A8D567FA /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IGAutoCompletionToolbar/IGAutoCompletionToolbar-Prefix.pch";
 				INFOPLIST_FILE = "IGAutoCompletionToolbar/IGAutoCompletionToolbar-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -342,6 +344,7 @@
 				547BF6C316DC6B8700D5A487 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

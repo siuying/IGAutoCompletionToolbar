@@ -1,0 +1,21 @@
+
+PODS:
+- IGAutoCompletionToolbar/Core (0.1.1)
+- IGAutoCompletionToolbar/ios5 (0.1.1):
+  - IGAutoCompletionToolbar/Core
+  - PSTCollectionView
+- PSTCollectionView (0.0.1)
+
+DEPENDENCIES:
+- IGAutoCompletionToolbar/ios5 (from `IGAutoCompletionToolbar.podspec')
+
+EXTERNAL SOURCES:
+  IGAutoCompletionToolbar/ios5:
+    :podspec: IGAutoCompletionToolbar.podspec
+
+SPEC CHECKSUMS:
+  IGAutoCompletionToolbar/Core: ff673df2a797f483293462d3c842ced4a6b021ed
+  IGAutoCompletionToolbar/ios5: ff673df2a797f483293462d3c842ced4a6b021ed
+  PSTCollectionView: c2ce6d64ffe55a8c3e68bb1036442817aaf83409
+
+COCOAPODS: 0.16.1

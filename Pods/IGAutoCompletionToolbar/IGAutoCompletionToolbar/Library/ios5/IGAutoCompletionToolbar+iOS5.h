@@ -1,0 +1,13 @@
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 60000
+#import "PSTCollectionView.h"
+#define UICollectionView PSTCollectionView
+#define UICollectionViewCell PSTCollectionViewCell
+#define UICollectionReusableView PSTCollectionReusableView
+#define UICollectionViewDelegate PSTCollectionViewDelegate
+#define UICollectionViewDataSource PSTCollectionViewDataSource
+#define UICollectionViewLayout PSTCollectionViewLayout
+#define UICollectionViewFlowLayout PSTCollectionViewFlowLayout
+#define UICollectionViewDelegateFlowLayout PSTCollectionViewDelegateFlowLayout
+#define UICollectionViewLayoutAttributes PSTCollectionViewLayoutAttributes
+#define UICollectionViewController PSTCollectionViewController
+#endif
