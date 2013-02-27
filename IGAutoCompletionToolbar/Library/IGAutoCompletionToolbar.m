@@ -27,6 +27,7 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
         self.backgroundColor = [UIColor whiteColor];
         self.items = [NSArray array];
         self.filter = nil;
+
         self.allowsSelection = YES;
         self.allowsMultipleSelection = NO;
 
@@ -43,7 +44,17 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
         self.gradientLayer.colors = @[(id)[highColor CGColor], (id)[lowColor CGColor]];
         self.backgroundView = [[UIView alloc] initWithFrame:self.bounds];
         [self.backgroundView.layer addSublayer:self.gradientLayer];
-        
+
+        CALayer *whiteBorder = [CALayer layer];
+        whiteBorder.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5].CGColor;
+        whiteBorder.frame = CGRectMake(0, 1.0, self.backgroundView.frame.size.width, 1.0);
+        [self.backgroundView.layer addSublayer:whiteBorder];
+
+        CALayer *blackBorder = [CALayer layer];
+        blackBorder.backgroundColor = [UIColor blackColor].CGColor;
+        blackBorder.frame = CGRectMake(0, 0.0, self.backgroundView.frame.size.width, 1.0);
+        [self.backgroundView.layer addSublayer:blackBorder];
+
         self.showsHorizontalScrollIndicator = NO;
         self.showsVerticalScrollIndicator = NO;
     }
@@ -87,6 +98,24 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
 -(void) layoutSubviews {
     [super layoutSubviews];
     self.gradientLayer.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+}
+
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
+    CGContextSetLineWidth(context, 2.0);
+    CGContextMoveToPoint(context, 0.0, 0.0);
+    CGContextAddLineToPoint(context, self.frame.size.width, 0.0);
+    CGContextStrokePath(context);
+
+    CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
+    CGContextSetLineWidth(context, 2.0);
+    CGContextMoveToPoint(context, 0.0, -2.0);
+    CGContextAddLineToPoint(context, self.frame.size.width, -2.0);
+    CGContextStrokePath(context);
+
 }
 
 #pragma mark - UICollectionViewDataSource

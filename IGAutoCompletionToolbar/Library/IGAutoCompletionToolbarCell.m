@@ -28,7 +28,7 @@
         //set the shadow on the view's layer
         [[self layer] setShadowColor:[[UIColor blackColor] CGColor]];
         [[self layer] setShadowOffset:CGSizeMake(0, 1)];
-        [[self layer] setShadowOpacity:0.6];
+        [[self layer] setShadowOpacity:0.8];
         [[self layer] setShadowRadius:1.0];
         
         self.backgroundView = [[UIView alloc] initWithFrame:self.bounds];
