@@ -45,15 +45,15 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
         self.backgroundView = [[UIView alloc] initWithFrame:self.bounds];
         [self.backgroundView.layer addSublayer:self.gradientLayer];
 
-        CALayer *whiteBorder = [CALayer layer];
-        whiteBorder.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5].CGColor;
-        whiteBorder.frame = CGRectMake(0, 1.0, self.backgroundView.frame.size.width, 1.0);
-        [self.backgroundView.layer addSublayer:whiteBorder];
+        _whiteBorder = [CALayer layer];
+        _whiteBorder.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5].CGColor;
+        _whiteBorder.frame = CGRectMake(0, 1.0, self.backgroundView.frame.size.width, 1.0);
+        [self.backgroundView.layer addSublayer:_whiteBorder];
 
-        CALayer *blackBorder = [CALayer layer];
-        blackBorder.backgroundColor = [UIColor blackColor].CGColor;
-        blackBorder.frame = CGRectMake(0, 0.0, self.backgroundView.frame.size.width, 1.0);
-        [self.backgroundView.layer addSublayer:blackBorder];
+        _blackBorder = [CALayer layer];
+        _blackBorder.backgroundColor = [UIColor blackColor].CGColor;
+        _blackBorder.frame = CGRectMake(0, 0.0, self.backgroundView.frame.size.width, 1.0);
+        [self.backgroundView.layer addSublayer:_blackBorder];
 
         self.showsHorizontalScrollIndicator = NO;
         self.showsVerticalScrollIndicator = NO;
@@ -97,7 +97,10 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
 
 -(void) layoutSubviews {
     [super layoutSubviews];
+
     self.gradientLayer.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    _whiteBorder.frame = CGRectMake(0, 1.0, self.backgroundView.frame.size.width, 1.0);
+    _blackBorder.frame = CGRectMake(0, 0.0, self.backgroundView.frame.size.width, 1.0);
 }
 
 - (void)drawRect:(CGRect)rect {

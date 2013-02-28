@@ -30,15 +30,20 @@ extern NSString* const IGAutoCompletionToolbarCellID;
 - (void) autoCompletionToolbar:(IGAutoCompletionToolbar*)toolbar didSelectItemWithObject:(id)object;
 @end
 
-@interface IGAutoCompletionToolbar : UICollectionView <UICollectionViewDataSource, UICollectionViewDelegate, IGAutoCompletionToolbarLayoutDelegate>
+@interface IGAutoCompletionToolbar : UICollectionView <UICollectionViewDataSource, UICollectionViewDelegate, IGAutoCompletionToolbarLayoutDelegate> {
+@private
+    CALayer* _whiteBorder;
+    CALayer* _blackBorder;
+}
 
 @property (nonatomic, weak) id<IGAutoCompletionToolbarDelegate, NSObject> toolbarDelegate;
 
 // the textfield this auto completion toolbar related to
 @property (nonatomic, weak) UITextField* textField;
-@property (nonatomic, strong) CAGradientLayer* gradientLayer;
 @property (nonatomic, strong) NSString* filter;
 @property (nonatomic, strong) NSArray* items;
 @property (nonatomic, strong, readonly) NSMutableArray* filteredItems;
+
+@property (nonatomic, strong) CAGradientLayer* gradientLayer;
 
 @end
