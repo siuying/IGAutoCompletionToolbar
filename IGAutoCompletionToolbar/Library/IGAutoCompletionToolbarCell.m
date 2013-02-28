@@ -30,6 +30,14 @@
         [[self layer] setShadowOffset:CGSizeMake(0, 1)];
         [[self layer] setShadowOpacity:0.8];
         [[self layer] setShadowRadius:1.0];
+
+        CGPathRef path = [UIBezierPath bezierPathWithRoundedRect:self.bounds
+                                               byRoundingCorners:UIRectCornerAllCorners
+                                                     cornerRadii:CGSizeMake(6, 6)].CGPath;
+        [[self layer] setShadowPath:path];
+
+        self.layer.shouldRasterize = YES;
+        self.layer.rasterizationScale = [UIScreen mainScreen].scale;
         
         self.backgroundView = [[UIView alloc] initWithFrame:self.bounds];
         self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
@@ -52,6 +60,11 @@
 #pragma mark - Sublayers
 
 -(void) setupSublayers {
+    CGPathRef path = [UIBezierPath bezierPathWithRoundedRect:self.bounds
+                                           byRoundingCorners:UIRectCornerAllCorners
+                                                 cornerRadii:CGSizeMake(6, 6)].CGPath;
+    [[self layer] setShadowPath:path];
+
     // backgrounds
     UIColor * highColor = [UIColor colorWithWhite:1.000 alpha:1.000];
     UIColor * lowColor = [UIColor colorWithRed:0.851 green:0.859 blue:0.867 alpha:1.000];
