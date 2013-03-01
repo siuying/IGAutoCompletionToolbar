@@ -156,10 +156,14 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
 
 -(CGSize) collectionView:(UICollectionView*)collectionView sizeWithIndex:(NSInteger)index {
     id object = [self.filteredItems objectAtIndex:index];
-    NSString* title = object;
-    CGSize size = [title sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:13.0]
-                    constrainedToSize:CGSizeMake(MAX_LABEL_WIDTH, 32.0)];
-    return CGSizeMake(size.width + 14.0, 32);
+    if (self.toolbarDelegate && [self.toolbarDelegate respondsToSelector:@selector(autoCompletionToolbar:cellSizeWithObject:)]) {
+        return [self.toolbarDelegate autoCompletionToolbar:self cellSizeWithObject:object];
+    } else {
+        NSString* title = object;
+        CGSize size = [title sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:13.0]
+                        constrainedToSize:CGSizeMake(MAX_LABEL_WIDTH, 32.0)];
+        return CGSizeMake(size.width + 14.0, 32);
+    }
 }
 
 #pragma mark - UICollectionViewDelegate

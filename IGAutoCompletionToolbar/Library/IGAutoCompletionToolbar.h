@@ -19,15 +19,21 @@ extern NSString* const IGAutoCompletionToolbarCellID;
 @protocol IGAutoCompletionToolbarDelegate <NSObject>
 @optional
 
-// Setup the IGAutoCompletionToolbarCell with the supplited object
-- (void) autoCompletionToolbar:(IGAutoCompletionToolbar*)toolbar setupCell:(IGAutoCompletionToolbarCell*)cell withObject:(id)object;
-
 // Check if the object should include the object with supplited filter
 // by default, filter the object as string, using NSCaseInsensitiveSearch
 - (BOOL) autoCompletionToolbar:(IGAutoCompletionToolbar*)toolbar shouldAcceptObject:(id)object withFilter:(NSString*)filter;
 
 // Called when item is selected
 - (void) autoCompletionToolbar:(IGAutoCompletionToolbar*)toolbar didSelectItemWithObject:(id)object;
+
+// Setup the IGAutoCompletionToolbarCell with the supplited object
+// Use this to customize the cell with any object.
+- (void) autoCompletionToolbar:(IGAutoCompletionToolbar*)toolbar setupCell:(IGAutoCompletionToolbarCell*)cell withObject:(id)object;
+
+// Size of the cell with supplied object.
+// If you implement autoCompletionToolbar:setupCell:withObject:, you would probably want to implement this.
+-(CGSize) autoCompletionToolbar:(IGAutoCompletionToolbar*)toolbar cellSizeWithObject:(id)object;
+
 @end
 
 @interface IGAutoCompletionToolbar : UICollectionView <UICollectionViewDataSource, UICollectionViewDelegate, IGAutoCompletionToolbarLayoutDelegate> {
