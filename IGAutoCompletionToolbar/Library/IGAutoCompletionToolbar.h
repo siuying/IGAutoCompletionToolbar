@@ -20,7 +20,7 @@ extern NSString* const IGAutoCompletionToolbarCellID;
 @optional
 
 // Setup the IGAutoCompletionToolbarCell with the supplited object
-- (BOOL) autoCompletionToolbar:(IGAutoCompletionToolbar*)toolbar setupCell:(IGAutoCompletionToolbarCell*)cell withObject:(id)object;
+- (void) autoCompletionToolbar:(IGAutoCompletionToolbar*)toolbar setupCell:(IGAutoCompletionToolbarCell*)cell withObject:(id)object;
 
 // Check if the object should include the object with supplited filter
 // by default, filter the object as string, using NSCaseInsensitiveSearch
