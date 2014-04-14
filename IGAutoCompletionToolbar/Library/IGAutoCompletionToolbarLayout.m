@@ -22,6 +22,7 @@
 - (void)invalidateLayout {
     [super invalidateLayout];
     self.layoutAttributes = nil;
+    [self layout];
 }
 
 - (NSArray*) layoutAttributesForElementsInRect:(CGRect)rect
