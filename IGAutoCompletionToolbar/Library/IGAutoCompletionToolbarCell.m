@@ -16,6 +16,12 @@
 
 @implementation IGAutoCompletionToolbarCell
 
++(void) initialize {
+    [[self appearance] setTextFont:[UIFont fontWithName:@"HelveticaNeue" size:13.0]];
+    [[self appearance] setTextColor:[UIColor blueColor]];
+    [[self appearance] setHighlightedTextColor:[UIColor lightTextColor]];
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -24,11 +30,13 @@
 
         self.textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         self.textLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-        self.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:13.0];
         self.textLabel.textAlignment = NSTextAlignmentCenter;
         self.textLabel.backgroundColor = [UIColor clearColor];
-        self.textLabel.textColor = [self tintColor];
-        self.textLabel.highlightedTextColor = [self tintColor];
+
+        self.textLabel.font = [[[self class] appearance] textFont];
+        self.textLabel.textColor = [[[self class] appearance] textColor];
+        self.textLabel.highlightedTextColor = [[[self class] appearance] highlightedTextColor];
+
         [self.contentView addSubview:self.textLabel];
     }
     return self;

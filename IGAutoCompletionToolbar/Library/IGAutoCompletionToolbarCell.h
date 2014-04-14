@@ -10,5 +10,11 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface IGAutoCompletionToolbarCell : UICollectionViewCell
+
+@property (nonatomic, strong) UIColor* textColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor* highlightedTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont* textFont UI_APPEARANCE_SELECTOR;
+
 @property (readonly, nonatomic) UILabel* textLabel;
+
 @end
