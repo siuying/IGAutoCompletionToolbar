@@ -21,6 +21,7 @@
 
 - (void)invalidateLayout {
     [super invalidateLayout];
+
     self.layoutAttributes = nil;
     [self layout];
 }

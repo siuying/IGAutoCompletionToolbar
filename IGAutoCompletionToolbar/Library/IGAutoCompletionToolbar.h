@@ -37,9 +37,6 @@ extern NSString* const IGAutoCompletionToolbarCellID;
 @end
 
 @interface IGAutoCompletionToolbar : UICollectionView <UICollectionViewDataSource, UICollectionViewDelegate, IGAutoCompletionToolbarLayoutDelegate> {
-@private
-    CALayer* _whiteBorder;
-    CALayer* _blackBorder;
 }
 
 @property (nonatomic, weak) id<IGAutoCompletionToolbarDelegate, NSObject> toolbarDelegate;

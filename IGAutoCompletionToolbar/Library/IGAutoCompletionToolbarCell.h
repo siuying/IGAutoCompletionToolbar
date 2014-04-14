@@ -10,9 +10,5 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface IGAutoCompletionToolbarCell : UICollectionViewCell
-
-@property (strong, nonatomic) UILabel* textLabel;
-@property (strong, nonatomic) CALayer* gradientLayer;
-@property (strong, nonatomic) CALayer* selectedGradientLayer;
-
+@property (readonly, nonatomic) UILabel* textLabel;
 @end
