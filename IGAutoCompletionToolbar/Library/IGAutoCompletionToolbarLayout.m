@@ -7,6 +7,7 @@
 //
 
 #import "IGAutoCompletionToolbarLayout.h"
+#import <math.h>
 
 @implementation IGAutoCompletionToolbarLayout
 
@@ -71,7 +72,7 @@
     for (NSInteger i = 0; i < numberOfItems; i ++) {
         CGSize size = [delegate collectionView:self.collectionView sizeWithIndex:i];
         UICollectionViewLayoutAttributes* attr = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-        attr.frame = CGRectMake(self.spacing + offset, self.padding, size.width, height);
+        attr.frame = CGRectMake(ceilf(self.spacing + offset), ceilf(self.padding), ceilf(size.width), ceilf(height));
         [newLayoutAttributes addObject:attr];
         offset = size.width + self.padding + offset;
     }
