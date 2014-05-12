@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'IGAutoCompletionToolbar'
-  s.version  = '0.1.6'
+  s.version  = '0.1.7'
   s.summary  = 'IGAutoCompletionToolbar is a UICollectionView subclass created to display auto completion via a keyboard accessory view.'
   
   s.homepage = 'https://github.com/siuying/IGAutoCompletionToolbar'

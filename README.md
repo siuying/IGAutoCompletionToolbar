@@ -20,7 +20,7 @@ iOS 6 or above with ARC.
 If you are using CocoaPods, add 'IGAutoCompletionToolbar' to your Podfile:
 
 ```
-pod 'IGAutoCompletionToolbar', '~> 0.1.6'
+pod 'IGAutoCompletionToolbar', '~> 0.1.7'
 ```
 
 Otherwise, download the projects and add files under IGAutoCompletionToolbar/* and 'QuartzCore' framework to your project.
