@@ -93,6 +93,7 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
 -(void) reloadData {
     [self reloadFilteredItems];
     [super reloadData];
+    [self.collectionViewLayout invalidateLayout];
 }
 
 -(void) layoutSubviews {
