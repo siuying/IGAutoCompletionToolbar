@@ -20,9 +20,12 @@
     [super viewDidLoad];
     
     // customization
-    [[IGAutoCompletionToolbarCell appearance] setTextColor:self.view.tintColor];
+    [[IGAutoCompletionToolbarCell appearance] setTextColor:[UIColor whiteColor]];
     [[IGAutoCompletionToolbarCell appearance] setHighlightedTextColor:self.view.tintColor];
+    [[IGAutoCompletionToolbarCell appearance] setBackgroundColor:self.view.tintColor];
+    [[IGAutoCompletionToolbarCell appearance] setHighlightedBackgroundColor:[UIColor whiteColor]];
     [[IGAutoCompletionToolbarCell appearance] setTextFont:[UIFont fontWithName:@"HelveticaNeue" size:14.0]];
+    [[IGAutoCompletionToolbarCell appearance] setCornerRadius:14];
 
     self.toolbar = [[IGAutoCompletionToolbar alloc] initWithFrame:CGRectMake(0,0,320,44)];
     self.toolbar.items = @[@"Apple", @"Banana", @"Blueberry", @"Grape", @"Pineapple", @"Orange", @"Pear"];

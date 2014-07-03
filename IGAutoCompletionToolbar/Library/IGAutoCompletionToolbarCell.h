@@ -12,8 +12,13 @@
 @interface IGAutoCompletionToolbarCell : UICollectionViewCell
 
 @property (nonatomic, strong) UIColor* textColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor* highlightedTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) UIColor* backgroundColor UI_APPEARANCE_SELECTOR;
+
 @property (nonatomic, strong) UIFont* textFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) CGFloat cornerRadius UI_APPEARANCE_SELECTOR;
+
+@property (nonatomic, strong) UIColor* highlightedTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) UIColor* highlightedBackgroundColor UI_APPEARANCE_SELECTOR;
 
 @property (readonly, nonatomic) UILabel* textLabel;
 

@@ -18,8 +18,11 @@
 
 +(void) initialize {
     [[self appearance] setTextFont:[UIFont fontWithName:@"HelveticaNeue" size:13.0]];
-    [[self appearance] setTextColor:[UIColor blueColor]];
-    [[self appearance] setHighlightedTextColor:[UIColor lightTextColor]];
+    [[self appearance] setTextColor:[UIColor whiteColor]];
+    [[self appearance] setBackgroundColor:[UIColor blueColor]];
+    [[self appearance] setHighlightedTextColor:[UIColor blueColor]];
+    [[self appearance] setHighlightedBackgroundColor:[UIColor whiteColor]];
+    [[self appearance] setCornerRadius:0];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -36,6 +39,11 @@
         self.textLabel.font = [[[self class] appearance] textFont];
         self.textLabel.textColor = [[[self class] appearance] textColor];
         self.textLabel.highlightedTextColor = [[[self class] appearance] highlightedTextColor];
+        
+        self.layer.cornerRadius = [[[self class] appearance] cornerRadius];
+        
+        UIColor* bgColor = [[[self class] appearance] backgroundColor];
+        self.layer.backgroundColor = bgColor.CGColor;
 
         [self.contentView addSubview:self.textLabel];
     }
@@ -45,6 +53,15 @@
 -(void) prepareForReuse {
     [super prepareForReuse];
     self.textLabel.text = nil;
+}
+
+-(void) setHighlighted:(BOOL)highlighted {
+    [super setHighlighted:highlighted];
+    if (highlighted) {
+        self.layer.backgroundColor = [[[self class] appearance] highlightedBackgroundColor].CGColor;
+    } else {
+        self.layer.backgroundColor = [[[self class] appearance] backgroundColor].CGColor;
+    }
 }
 
 @end
