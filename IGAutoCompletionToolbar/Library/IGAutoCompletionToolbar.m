@@ -96,9 +96,13 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (section == 0) {
+    if (section == 0)
+    {
+        self.hidden = ([self.filteredItems count] == 0);
         return [self.filteredItems count];
-    } else {
+    }
+    else
+    {
         return 0;
     }
 }
