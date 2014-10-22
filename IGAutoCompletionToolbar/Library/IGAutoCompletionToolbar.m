@@ -43,6 +43,11 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
     return self;
 }
 
+-(void)dealloc
+{
+    [self.textField removeTarget:self action:@selector(autoCompletionToolbarTextDidChange:) forControlEvents:UIControlEventEditingChanged];
+}
+
 -(void) setTextField:(UITextField *)textField {
     if (_textField != textField) {
         if (_textField != NULL) {
