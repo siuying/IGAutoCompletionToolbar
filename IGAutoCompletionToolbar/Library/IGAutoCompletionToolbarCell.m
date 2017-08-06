@@ -7,7 +7,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-
+#import <UIKit/UIKit.h>
 #import "IGAutoCompletionToolbarCell.h"
 
 @interface IGAutoCompletionToolbarCell()
@@ -36,13 +36,13 @@
         self.textLabel.textAlignment = NSTextAlignmentCenter;
         self.textLabel.backgroundColor = [UIColor clearColor];
 
-        self.textLabel.font = [[[self class] appearance] textFont];
-        self.textLabel.textColor = [[[self class] appearance] textColor];
-        self.textLabel.highlightedTextColor = [[[self class] appearance] highlightedTextColor];
+        self.textLabel.font = [[IGAutoCompletionToolbarCell appearance] textFont];
+        self.textLabel.textColor = [[IGAutoCompletionToolbarCell appearance] textColor];
+        self.textLabel.highlightedTextColor = [[IGAutoCompletionToolbarCell appearance] highlightedTextColor];
         
-        self.layer.cornerRadius = [[[self class] appearance] cornerRadius];
-        
-        UIColor* bgColor = [[[self class] appearance] backgroundColor];
+        self.layer.cornerRadius = [[IGAutoCompletionToolbarCell appearance] cornerRadius];
+
+        UIColor* bgColor = [[IGAutoCompletionToolbarCell appearance] backgroundColor];
         self.layer.backgroundColor = bgColor.CGColor;
 
         [self.contentView addSubview:self.textLabel];
@@ -58,9 +58,9 @@
 -(void) setHighlighted:(BOOL)highlighted {
     [super setHighlighted:highlighted];
     if (highlighted) {
-        self.layer.backgroundColor = [[[self class] appearance] highlightedBackgroundColor].CGColor;
+        self.layer.backgroundColor = [[IGAutoCompletionToolbarCell appearance] highlightedBackgroundColor].CGColor;
     } else {
-        self.layer.backgroundColor = [[[self class] appearance] backgroundColor].CGColor;
+        self.layer.backgroundColor = [[IGAutoCompletionToolbarCell appearance] backgroundColor].CGColor;
     }
 }
 

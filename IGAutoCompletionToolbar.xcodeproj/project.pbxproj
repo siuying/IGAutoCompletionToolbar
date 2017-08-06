@@ -165,6 +165,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Ignition Soft";
+				TargetAttributes = {
+					547BF69A16DC6B8700D5A487 = {
+						DevelopmentTeam = 638635GR5X;
+					};
+				};
 			};
 			buildConfigurationList = 547BF69616DC6B8600D5A487 /* Build configuration list for PBXProject "IGAutoCompletionToolbar" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -304,9 +309,11 @@
 		547BF6C216DC6B8700D5A487 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 638635GR5X;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IGAutoCompletionToolbar/IGAutoCompletionToolbar-Prefix.pch";
 				INFOPLIST_FILE = "IGAutoCompletionToolbar/IGAutoCompletionToolbar-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -315,9 +322,11 @@
 		547BF6C316DC6B8700D5A487 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 638635GR5X;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IGAutoCompletionToolbar/IGAutoCompletionToolbar-Prefix.pch";
 				INFOPLIST_FILE = "IGAutoCompletionToolbar/IGAutoCompletionToolbar-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -342,6 +351,7 @@
 				547BF6C316DC6B8700D5A487 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
