@@ -27,20 +27,25 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
         self.backgroundColor = [UIColor whiteColor];
         self.items = [NSArray array];
         self.filter = nil;
-
+        
         self.allowsSelection = YES;
         self.allowsMultipleSelection = NO;
-
+        
         [self registerClass:[IGAutoCompletionToolbarCell class]
  forCellWithReuseIdentifier:IGAutoCompletionToolbarCellID];
-
+        
         self.dataSource = self;
         self.delegate = self;
-
+        
         self.showsHorizontalScrollIndicator = NO;
         self.showsVerticalScrollIndicator = NO;
     }
     return self;
+}
+
+-(void)dealloc
+{
+    [self.textField removeTarget:self action:@selector(autoCompletionToolbarTextDidChange:) forControlEvents:UIControlEventEditingChanged];
 }
 
 -(void) setTextField:(UITextField *)textField {
@@ -48,12 +53,18 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
         if (_textField != NULL) {
             [_textField removeTarget:self action:@selector(autoCompletionToolbarTextDidChange:) forControlEvents:UIControlEventEditingChanged];
         }
-
+        
         if (textField != NULL) {
             [textField addTarget:self action:@selector(autoCompletionToolbarTextDidChange:) forControlEvents:UIControlEventEditingChanged];
         }
         
         _textField = textField;
+        
+        if ([_textField.text length])
+        {
+            self.filter = textField.text;
+            [self reloadData];
+        }
     }
 }
 
@@ -85,9 +96,13 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (section == 0) {
+    if (section == 0)
+    {
+        self.hidden = ([self.filteredItems count] == 0);
         return [self.filteredItems count];
-    } else {
+    }
+    else
+    {
         return 0;
     }
 }
@@ -137,6 +152,11 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
     if (self.toolbarDelegate && [self.toolbarDelegate respondsToSelector:@selector(autoCompletionToolbar:didSelectItemWithObject:)]) {
         id object = [self.filteredItems objectAtIndex:[indexPath row]];
         [self.toolbarDelegate autoCompletionToolbar:self didSelectItemWithObject:object];
+        if ([object isKindOfClass:[NSString class]])
+        {
+            self.filter = self.textField.text;
+            [self reloadData];
+        }
     }
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
@@ -151,12 +171,12 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
             [newFilteredItems addObject:obj];
             return;
         }
-
+        
         if (self.toolbarDelegate && [self.toolbarDelegate respondsToSelector:@selector(autoCompletionToolbar:shouldAcceptObject:withFilter:)]) {
             if ([self.toolbarDelegate autoCompletionToolbar:self shouldAcceptObject:obj withFilter:self.filter]) {
                 [newFilteredItems addObject:obj];
             }
-
+            
         } else {
             NSString* content = nil;
             if ([obj isMemberOfClass:[NSString class]]) {
@@ -164,7 +184,7 @@ NSString* const IGAutoCompletionToolbarCellID = @"IGAutoCompletionToolbarCellID"
             } else {
                 content = [obj description];
             }
-
+            
             if ([content rangeOfString:self.filter options:NSCaseInsensitiveSearch].location != NSNotFound) {
                 [newFilteredItems addObject:obj];
             }
